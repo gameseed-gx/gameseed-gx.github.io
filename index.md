@@ -37,14 +37,14 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 - S25FL064LABNFI041: 8MB Flash ('gold' FPGA images, boot code, lua binaries, etc)
 
 ## CPU FPGA
-- iCE40UP5k: 5280 LUT, 128KB SPRAM, 120 KB EBRAM
-- 'CRAM': dedicated CPU HYPERRAM (16MB)
+- LatticeSemi iCE40UP5k: 5280 LUT, 8 MAC16, 128 KB SPRAM, 120 KB EBRAM
+- IS66WVH16M8DBLL-100B1LI: dedicated CPU HYPERRAM (16MB)
 - Micro-SD card: ('updated' FPGA images, lua code, file system, games, etc)
 - Dedicated 6-wire CPU <-> GPU bus for communication.
 
 ## GPU FPGA
-- iCE40UP5k: 5280 LUT, 128KB SPRAM, 120 KB EBRAM
-- 'GRAM', dedicated GPU HYPERRAM (16MB)
+- LatticeSemi iCE40UP5k: 5280 LUT, 8 MAC16, 128 KB SPRAM, 120 KB EBRAM
+- IS66WVH16M8DBLL-100B1LI: dedicated GPU HYPERRAM (16MB)
 - Composite video output using a 5-bit R2R DAC (capable enough to output 64 (rrggbb), 512 (rrrgggbbb), and potentially 4096 (rrrrggggbbbb) colors)
 - Stereo audio output using two low-pass filtered PWM DACs
 
