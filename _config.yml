@@ -1,0 +1,28 @@
+name: gameseed development blog
+title: gameseed development blog
+baseurl: ""
+
+# remove 'View on Github'
+github:
+  is_project_page: false
+
+theme: jekyll-theme-hacker
+email: electrodev@gmail.com
+url: https://gameseed.github.io
+twitter_username: beefok
+github_username: beefok
+author: beefok
+
+# pagination
+permalink: /:year/:month/
+pagination:
+ enabled: true
+ per_page: 14
+ sort_reverse: true
+ limit: 0
+ sort_field: 'date'
+ permalink: '/page/:num/'
+ title: ':title'
+ trail:
+  before: 2
+  after: 2
