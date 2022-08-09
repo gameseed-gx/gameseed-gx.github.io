@@ -3,7 +3,9 @@ title: Gameseed Development
 description: blog about gameseed development
 ---
 Author: Matt 'beefok' Griffith
-Email: [electrodev@gmail.com](electrodev@gmail.com)
+
+Email: [electrodev@gmail.com](gameseed@proton.me)
+
 Twitter: [@beefok](https://www.twitter.com/beefok)
 
 The gameseed video game console project has been a passion of mine for the _last too many years_. I've iterated on it too many times to count. I think it's finally time to release some sort of public announcement for it!
