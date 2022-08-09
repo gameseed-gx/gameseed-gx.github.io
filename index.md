@@ -15,6 +15,7 @@ The gameseed video game console project has been a passion of mine for the last 
 # Introduction
 The goal of this project is to take the concept of a fantasy console, like [pico-8](https://www.lexaloffle.com/pico-8.php) or [tic-80](https://tic80.com/), and transform it into a real physical product, including a web-based solo/collab game development environment built into the system.
 
+# Concept:
 The basic concept I've been running with is a dual FPGA design with one dedicated to CPU/System-level interfacing and the other dedicated to the GPU (video and audio). 
 
 I love how simple video/audio generation is for Analog NTSC/PAL TV systems, so in the spirit of simplicity and a 'retro' feel, I've opted for using composite video for the first system. Of course anything with RCA/composite inputs should work as well, provided the timing looks alright. I'm also in the process of designing my own RISC-V (rv32imc) CPU core as well as a unique 'Playstation One'-like GPU design (with optional perspective correct texture mapping.)
@@ -24,14 +25,16 @@ It also has to have some sort of user input (keyboards, mice, gamepads.) Instead
 I've also been working on a lightweight sandboxed lua API for the CPU/GPU.
 I dream of being able to make video games while sitting in front of a TV like the old days, but with all of the great advances we've made in electronics, network, and software. Thanks to modern technology, the PCB is just 43mm x 55mm!
 
-# Concept:
+# Break-down:
 At the top-level, the system uses an ESP32-C3 to coordinate everything required to boot the system and maintain *sanity*.
 - FPGA configuration and boot-up
 - Dedicated QSPI master channel interface to the CPU FPGA
 - Flash ROM read/write to/from CPU FPGA
 - SD-CARD access (actually directed through the CPU FPGA)
-- Bluetooth-based access to BLE 5.0 Keyboards, Mice, and gamepads (I'm using an 8bitdo lite-2)
-- WIFI for networked games and openocd/gdb debugger to step-through debug the CPU FPGA (definitely a future task!) as well as hosting an http server for internal development features.
+- Bluetooth-based access to BLE 5.0 Keyboards, Mice, and gamepads (I'm using an 8bitdo lite-2 personally)
+- WIFI:
+--  networked games and remote openocd/gdb debugger to step-through debug the CPU FPGA (future task!)
+--  hosting an http server for internal development features.
 
 # Technical specifications:
 
