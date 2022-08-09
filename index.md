@@ -13,13 +13,18 @@ The gameseed video game console project has been a passion of mine for the last 
 ![gameseed scan](/images/gameseed-x1.png)
 
 # Introduction
-The goal of this project is to take the concept of a fantasy console, like pico-8 or tic-80, and make it into a real physical product.
-The basic concept I've been running with is a dual FPGA design with one dedicated to CPU/System-level interfacing and the other dedicated to the GPU (video and audio).
+The goal of this project is to take the concept of a fantasy console, like [pico-8](https://www.lexaloffle.com/pico-8.php) or [tic-80](https://tic80.com/), and transform it into a real physical product, including a web-based solo/collab game development environment built into the system.
+
+The basic concept I've been running with is a dual FPGA design with one dedicated to CPU/System-level interfacing and the other dedicated to the GPU (video and audio). 
 
 I love how simple video/audio generation is for Analog NTSC/PAL TV systems, so in the spirit of simplicity and a 'retro' feel, I've opted for using composite video for the first system. Of course anything with RCA/composite inputs should work as well, provided the timing looks alright. I'm also in the process of designing my own RISC-V (rv32imc) CPU core as well as a unique 'Playstation One'-like GPU design (with optional perspective correct texture mapping.)
 
-I've also been working on a lightweight sandboxed lua API for the CPU/GPU. I dream of being able to make video games while sitting in front of a TV like the old days!
+It also has to have some sort of user input (keyboards, mice, gamepads.) Instead of having to deal with the endless headaches of trying to implement something that works for everyone, I went down the road of bluetooth since it removes yet more wires. I also wanted some way of sharing games you make as well as being able to play other people's games either solo or multiplayer. The ESP32 fits these requirements perfectly!
 
+I've also been working on a lightweight sandboxed lua API for the CPU/GPU.
+I dream of being able to make video games while sitting in front of a TV like the old days, but with all of the great advances we've made in electronics, network, and software. Thanks to modern technology, the PCB is just 43mm x 55mm!
+
+# Concept:
 At the top-level, the system uses an ESP32-C3 to coordinate everything required to boot the system and maintain *sanity*.
 - FPGA configuration and boot-up
 - Dedicated QSPI master channel interface to the CPU FPGA
@@ -34,6 +39,7 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 - ESP32-C3-WROOM-02 module: RISC-V Espressif MCU, 4MB Flash
 - USB-C: JTAG/UART interface and system power 
 - S25FL064LABNFI041: 8MB Flash ('gold' FPGA images, boot code, lua binaries, etc)
+- Dedicated QSPI ESP32 <-> CPU bus for communication and programming.
 
 ## CPU FPGA
 - LatticeSemi iCE40UP5k: 5280 LUT, 8 MAC16, 128 KB SPRAM, 120 KB EBRAM
