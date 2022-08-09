@@ -60,6 +60,6 @@ Regardless of all my design ideas, this product could be used in ways I haven't 
 ## color output:
 ![gameseed tv](/images/gameseed-x2.png)
 
-## simulated triangle rasterization (based on a work-in-progress GPU FPGA design)
+## triangle rasterization concepts (GPU Design sim)
 ![gameseed polygon raster](/images/triraster7.gif)
 ![gameseed hierarchical raster](/images/hierarchy2.gif)
