@@ -13,13 +13,12 @@ The gameseed video game console project has been a passion of mine for the last 
 ![gameseed scan](/images/gameseed-x1.png)
 
 # Introduction
+The goal of this project is to take the concept of a fantasy console, like pico-8 or tic-80, and make it into a real physical product.
 The basic concept I've been running with is a dual FPGA design with one dedicated to CPU/System-level interfacing and the other dedicated to the GPU (video and audio).
 
-I love how simple video/audio generation is for Analog NTSC/PAL TV systems, so in the spirit of simplicity and a 'retro' feel, I've opted for using composite video for the first system. Of course anything with RCA/composite inputs should work as well, provided the timing looks alright.
+I love how simple video/audio generation is for Analog NTSC/PAL TV systems, so in the spirit of simplicity and a 'retro' feel, I've opted for using composite video for the first system. Of course anything with RCA/composite inputs should work as well, provided the timing looks alright. I'm also in the process of designing my own RISC-V (rv32imc) CPU core as well as a unique 'Playstation One'-like GPU design (with optional perspective correct texture mapping.)
 
-One of my personal goals for the project is to bring the concept of a fantasy console (like pico-8 or tic-80) and making it a real product. To do so, I'm in the process of implementing my own RISC-V (rv32imc) CPU core as well as my own 'Playstation One'-level GPU design.
-
-I've also been working on a lightweight sandboxed lua API for the CPU. I want to be able to make video games while sitting in front of a TV like the old days!
+I've also been working on a lightweight sandboxed lua API for the CPU/GPU. I dream of being able to make video games while sitting in front of a TV like the old days!
 
 At the top-level, the system uses an ESP32-C3 to coordinate everything required to boot the system and maintain *sanity*.
 - FPGA configuration and boot-up
