@@ -30,26 +30,27 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 - WIFI for networked games and openocd/gdb debugger to step-through debug the CPU FPGA (definitely a future task!) as well as hosting an http server for internal development features.
 
 # Technical specifications:
-```
-ESP32-C3-WROOM-02 module
-USB-C connector for ESP32-C3 JTAG/UART interface and system power 
 
-S25FL064LABNFI041 8MB Flash ('gold' FPGA images, boot code, lua binaries, etc)
+## Wifi/Bluetooth/System Interface:
+- ESP32-C3-WROOM-02 module: RISC-V Espressif MCU, 4MB Flash
+- USB-C: JTAG/UART interface and system power 
+- S25FL064LABNFI041: 8MB Flash ('gold' FPGA images, boot code, lua binaries, etc)
 
-iCE40UP5k CPU FPGA, to be used to implement the CPU design and 'SOC' features.
-'CRAM', dedicated CPU HYPERRAM (16MB)
-Micro-SD card interface ('updated' FPGA images, lua code, file system, games, etc)
+## CPU FPGA
+- iCE40UP5k: 5280 LUT, 128KB SPRAM, 120 KB EBRAM
+- 'CRAM': dedicated CPU HYPERRAM (16MB)
+- Micro-SD card: ('updated' FPGA images, lua code, file system, games, etc)
+- Dedicated 6-wire CPU <-> GPU bus for communication.
 
-iCE40UP5k GPU FPGA, to be used to implement the GPU and SPU design.
-'GRAM', dedicated GPU HYPERRAM (16MB)
-Composite video output using a 5-bit R2R DAC (capable enough to output 64 (rrggbb), 512 (rrrgggbbb), and potentially 4096 (rrrrggggbbbb) colors)
-Stereo audio output using two low-pass filtered PWM DACs
+## GPU FPGA
+- iCE40UP5k: 5280 LUT, 128KB SPRAM, 120 KB EBRAM
+- 'GRAM', dedicated GPU HYPERRAM (16MB)
+- Composite video output using a 5-bit R2R DAC (capable enough to output 64 (rrggbb), 512 (rrrgggbbb), and potentially 4096 (rrrrggggbbbb) colors)
+- Stereo audio output using two low-pass filtered PWM DACs
 
-Dedicated 6-wire CPU <-> GPU bus for communication.
-
-Both FPGAs are clocked at 6X (21.47~ MHz), 8X (28.63~ MHz) or 12X (42.95~ MHz) the NTSC color burst frequency (= 315*N/88 MHz)
-For PAL, the OSC will need to be replaced with the correct PAL color burst frequency.
-```
+## Clocking
+- Both FPGAs are clocked at 6X (21.47~ MHz), 8X (28.63~ MHz) or 12X (42.95~ MHz) the NTSC color burst frequency (= 315*N/88 MHz)
+- For PAL, the OSC will need to be replaced with the correct PAL color burst frequency.
 
 Another design based on dual Crosslink NX utilizing HDMI output is in the works as well, but with unpredictable chip stocking issues, I haven't spent a lot of time worrying about it.
 
