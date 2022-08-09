@@ -55,14 +55,19 @@ Another design (gameseed NX) based on dual Crosslink NX FPGAs capable of much hi
 
 Regardless of all my design ideas, this product could be used in ways I haven't considered such as a MiSTER system!
 
-# here's some fun!
+# here's some gpu fun!
 
 ## color output:
 ![gameseed tv](/images/gameseed-x2.png)
 
-## triangle rasterization (affine) (GPU Design sim)
+## triangle rasterization
+
+simulation of experimental affine texture mapping (perspective soon!)
+
 ![gameseed polygon raster](/images/triraster7.gif)
 
 ## triangle rasterization
-experimental hierarchical tile marching implementation
+
+simulation of experimental hierarchical tile marching implementation
+
 ![gameseed hierarchical raster](/images/hierarchy2.gif)
