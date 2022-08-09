@@ -8,17 +8,18 @@ Email: [electrodev@gmail.com](gameseed@proton.me)
 
 Twitter: [@beefok](https://www.twitter.com/beefok)
 
-The gameseed video game console project has been a passion of mine for the _last too many years_. I've iterated on it too many times to count. I think it's finally time to release some sort of public announcement for it!
+The gameseed video game console project has been a passion of mine for the last _too many years_. I've iterated on it way too many times to count. However, I think it's finally time to release some sort of public announcement for it!
 
 ![gameseed scan](/images/gameseed-x1.png)
 
 # Introduction
-The basic concept I've been running with is a dual FPGA design with one dedicated to CPU/System-level interfacing and the other is dedicated to the GPU (video as well as audio).
+The basic concept I've been running with is a dual FPGA design with one dedicated to CPU/System-level interfacing and the other dedicated to the GPU (video and audio).
 
-I love how simple video/audio generation is for NTSC/PAL, so in the spirit of simplicity and a 'retro' feel, I've opted for using composite video for the first system.
+I love how simple video/audio generation is for Analog NTSC/PAL TV systems, so in the spirit of simplicity and a 'retro' feel, I've opted for using composite video for the first system. Of course anything with RCA/composite inputs should work as well, provided the timing looks alright.
 
-My personal goal for the project is in implementing my own RISC-V (rv32imc) CPU core as well as my own 'Playstation One'-level GPU.
-On top of that, I've been working on a lightweight sandboxed lua API for the CPU in order to implement my own fantasy-console-esque game development system, allowing pico-8/TIC-80 style game dev.
+One of my personal goals for the project is to bring the concept of a fantasy console (like pico-8 or tic-80) and making it a real product. To do so, I'm in the process of implementing my own RISC-V (rv32imc) CPU core as well as my own 'Playstation One'-level GPU design.
+
+I've also been working on a lightweight sandboxed lua API for the CPU. I want to be able to make video games while sitting in front of a TV like the old days!
 
 At the top-level, the system uses an ESP32-C3 to coordinate everything required to boot the system and maintain *sanity*.
 - FPGA configuration and boot-up
@@ -27,8 +28,6 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 - SD-CARD access (actually directed through the CPU FPGA)
 - Bluetooth-based access to BLE 5.0 Keyboards, Mice, and gamepads (I'm using an 8bitdo lite-2)
 - WIFI for networked games and openocd/gdb debugger to step-through debug the CPU FPGA (definitely a future task!) as well as hosting an http server for internal development features.
-
-Another design based on dual Crosslink NX utilizing HDMI output is in the works as well, but with unpredictable chip stocking issues, I haven't spent a lot of time worrying about it.
 
 # Technical specifications:
 ```
@@ -52,7 +51,11 @@ Both FPGAs are clocked at 6X (21.47~ MHz), 8X (28.63~ MHz) or 12X (42.95~ MHz) t
 For PAL, the OSC will need to be replaced with the correct PAL color burst frequency.
 ```
 
-# some fun!
+Another design based on dual Crosslink NX utilizing HDMI output is in the works as well, but with unpredictable chip stocking issues, I haven't spent a lot of time worrying about it.
+
+Regardless of all my design ideas, this product could be used in ways I haven't considered, such as a MiSTER system!
+
+# here's some fun!
 
 ## color output:
 ![gameseed tv](/images/gameseed-x2.png)
