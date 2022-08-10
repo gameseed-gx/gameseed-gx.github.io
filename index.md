@@ -20,7 +20,7 @@ I love how simple video/audio generation is for Analog NTSC/PAL TV systems, so i
 It also has to have some sort of user input (keyboards, mice, gamepads.) Instead of having to deal with the endless headaches of trying to implement something that works for everyone, I went down the road of bluetooth since it removes yet more wires. I also wanted some way of sharing games you make as well as being able to play other people's games either solo or multiplayer. The ESP32 fits these requirements perfectly!
 
 I've also been working on a lightweight sandboxed lua API for the CPU/GPU.
-I dream of being able to make video games while sitting in front of a TV like the old days, but with all of the great advances we've made in electronics, network, and software. Thanks to modern technology, the PCB is just 43 mm x 55 mm!
+I dream of being able to make video games while sitting in front of a TV like the old days, but with all of the great advances we've made in electronics, game networking, and software tools. Thanks to modern technology, the PCB is just 
 
 At the top-level, the system uses an ESP32-C3 to coordinate everything required to boot the system and maintain *sanity*.
 - FPGA configuration and boot-up
@@ -36,7 +36,7 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 
 ![pcb design](/images/gameseed-pcb.png)
 
-The PCB is a two-layer design with 4/4 mil trace width/spacing, 0.25 mm minimum drill hole, with a small amount of components on the top side only. It was fabricated and assembled by [NextPCB](https://www.nextpcb.com), which I've had a great experience working with!
+The PCB is a two-layer 43 mm x 55 mm board with 4/4 mil trace width/spacing, 0.25 mm minimum drill hole size, with a small amount of components on the top side only. It was fabricated and assembled by [NextPCB](https://www.nextpcb.com), which I've had a great experience working with! All of these design decisions were made in order to keep the price of fabrication and assembly down.
 
 # Technical specifications
 
