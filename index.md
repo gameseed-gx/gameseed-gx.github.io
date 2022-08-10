@@ -22,7 +22,6 @@ It also has to have some sort of user input (keyboards, mice, gamepads.) Instead
 I've also been working on a lightweight sandboxed lua API for the CPU/GPU.
 I dream of being able to make video games while sitting in front of a TV like the old days, but with all of the great advances we've made in electronics, network, and software. Thanks to modern technology, the PCB is just 43 mm x 55 mm!
 
-# Break-down
 At the top-level, the system uses an ESP32-C3 to coordinate everything required to boot the system and maintain *sanity*.
 - FPGA configuration and boot-up
 - Dedicated QSPI master channel interface to the CPU FPGA
@@ -33,6 +32,11 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 --  networked games and remote openocd/gdb debugger to step-through debug the CPU FPGA (future task!)
 --  hosting an http server for internal development features.
 
+# PCB Layout
+
+![pcb design](/images/gameseed-pcb.png)
+
+The PCB is a two-layer design with 4/4 mil trace width/spacing, 0.25 mm minimum drill hole, with a small amount of components on the top side only. It was fabricated and assembled by [NextPCB](https://www.nextpcb.com), which I've had a great experience working with!
 
 # Technical specifications
 
@@ -58,7 +62,6 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 - Both FPGAs are clocked at 6X (21.47~ MHz), 8X (28.63~ MHz) or 12X (42.95~ MHz) the NTSC color burst frequency (= 315*N/88 MHz)
 - For PAL, the OSC will need to be replaced with the correct PAL color burst frequency.
 
-
 # Game console goals
 
 ## GS-RV32 RISC-V 32-bit CPU
@@ -80,6 +83,8 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 
 # Notes
 
+![rendering process](/images/gameseed-x4.png)
+
 I will be updating my blog with my progress as I go along. I also (sometimes) update my twitter with whatever I'm working on as well.
 
 # GPU experiments
@@ -98,6 +103,7 @@ This is a simulation of experimental affine texture mapping (perspective soon!)
 
 ## (hierarchical tile marching)
 
-![gameseed hierarchical raster](/images/hierarchy2.gif)
+![gameseed hierarchical raster 1](/images/gameseed-x3.png)
+![gameseed hierarchical raster anim](/images/hierarchy2.gif)
 
 Here is a simulation of experimental hierarchical tile marching implementation. Debug data is displayed and it is slowed down for ease of debug. I'm really proud of the technique used to search for polygons by marching through the barycentric coordinates in a hierarchical manner. I'm not certain if anyone has implemented it quite like this, and of course I stand on the shoulders of giants. Regardless, I'm looking forward to writing a blog post about it!
