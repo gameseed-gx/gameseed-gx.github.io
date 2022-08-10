@@ -63,11 +63,11 @@ At the top-level, the system uses an ESP32-C3 to coordinate everything required 
 
 ## GS-RV32 RISC-V 32-bit CPU
 - 3-stage pipeline: Fetch, Decode, Execute
-- 21~ MHz clock frequency, mostly executing around 1 instruction/tick.
-- Four-way 32 KB Unified L2 Cache
-- Two-way 4 KB Unified L1 Cache
-- 24-bit adddress range with 16 MByte main memory
-- Gcc/clang open-source toolchain
+- 21~ MHz clock frequency, executing around 1 instruction/tick.
+- Four-way 32 KByte Unified L2 Cache
+- Two-way 4 KByte Unified L1 Cache
+- 24-bit (16 MByte) CPU RAM memory address space.
+- gcc/clang open-source toolchain
 - Integrated lua-based interpreter/compiler/graphical os
 - Remote openocd/gdb step-thru debugging over WIFI via ESP32 (**big** TBD)
 
@@ -92,7 +92,7 @@ This is NTSC color video generation from a previous revision of the board. I wil
 
 ## triangle rasterization
 
-a simulation of experimental affine texture mapping (perspective soon!)
+This is a simulation of experimental affine texture mapping (perspective soon!)
 
 ![gameseed polygon raster](/images/triraster7.gif)
 
@@ -100,4 +100,4 @@ a simulation of experimental affine texture mapping (perspective soon!)
 
 ![gameseed hierarchical raster](/images/hierarchy2.gif)
 
-Here is a simulation of experimental hierarchical tile marching implementation. I'm really proud of the technique used to search for polygons by marching through the barycentric coordinates in a hierarchical manner. I'm not certain if anyone has implemented it quite like this, and of course I stand on the shoulders of giants. Regardless, I'm looking forward to writing a blog post about it!
+Here is a simulation of experimental hierarchical tile marching implementation. Debug data is displayed and it is slowed down for ease of debug. I'm really proud of the technique used to search for polygons by marching through the barycentric coordinates in a hierarchical manner. I'm not certain if anyone has implemented it quite like this, and of course I stand on the shoulders of giants. Regardless, I'm looking forward to writing a blog post about it!
