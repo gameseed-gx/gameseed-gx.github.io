@@ -20,7 +20,7 @@ I love how simple video/audio generation is for Analog NTSC/PAL TV systems, so i
 It also has to have some sort of user input (keyboards, mice, gamepads.) Instead of having to deal with the endless headaches of trying to implement something that works for everyone, I went down the road of bluetooth since it removes yet more wires. I also wanted some way of sharing games you make as well as being able to play other people's games either solo or multiplayer. The ESP32 fits these requirements perfectly!
 
 I've also been working on a lightweight sandboxed lua API for the CPU/GPU.
-I dream of being able to make video games while sitting in front of a TV like the old days, but with all of the great advances we've made in electronics, game networking, and software tools. Thanks to modern technology, the PCB is just 
+I dream of being able to make video games while sitting in front of a TV like the old days, but with all of the great advances we've made in electronics, game networking, and software tools.
 
 At the top-level, the system uses an ESP32-C3 to coordinate everything required to boot the system and maintain *sanity*.
 - FPGA configuration and boot-up
