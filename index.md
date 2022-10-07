@@ -107,3 +107,5 @@ This is a simulation of experimental affine texture mapping (perspective soon!)
 ![gameseed hierarchical raster anim](/images/hierarchy2.gif)
 
 Here is a simulation of experimental hierarchical tile marching implementation. Debug data is displayed and it is slowed down for ease of debug. I'm really proud of the technique used to search for polygons by marching through the barycentric coordinates in a hierarchical manner. I'm not certain if anyone has implemented it quite like this, and of course I stand on the shoulders of giants. Regardless, I'm looking forward to writing a blog post about it!
+
+FOR FUN, I've been working on and have completely simulated/tested a simple 12-bit CPU design, which I think I will use to develop the first iteration of the gameseed-gx system with. [Documentation for this CPU](gs-cpu12.pdf). Check it out!
