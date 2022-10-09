@@ -25,7 +25,8 @@ This algorithm has a bunch of advantages over many of the 'standard' algorithms 
     Edge += Edge.dx # step 1
     Edge += Edge.dy # step 2
     Edge -= Edge.dx # step 3
-    Edge -= Edge.dy # step 4, (bringing it back to origin)```
+    Edge -= Edge.dy # step 4, (bringing it back to origin)
+    ```
     
 ##### Disadvantages
 
