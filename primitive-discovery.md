@@ -1,7 +1,7 @@
 # Triangle Discovery and Rasterization
 
 ## Introduction
-In order to draw primitives to the screen, the system uses a tile rasterization algorithm that I (mostly) made up after reading [Michael Abrash's Larabee algorithm](https://www.cs.cmu.edu/afs/cs/academic/class/15869-f11/www/readings/abrash09_lrbrast.pdf) and [Ned Greene's paper, Hierarchical Polygon Tiling with Coverage Masks][https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.1646&rep=rep1&type=pdf]. I'm not sure if this concept has been done before, but chances are it has and I just haven't read all there is to know about this concept.
+In order to draw primitives to the screen, the system uses a tile rasterization algorithm that I (mostly) made up after reading [Michael Abrash's Larabee algorithm](https://www.cs.cmu.edu/afs/cs/academic/class/15869-f11/www/readings/abrash09_lrbrast.pdf) and [Ned Greene's paper, Hierarchical Polygon Tiling with Coverage Masks](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.1646&rep=rep1&type=pdf). I'm not sure if this concept has been done before, but chances are it has and I just haven't read all there is to know about this concept.
 
 This algorithm has a bunch of advantages over many of the 'standard' algorithms that I have researched.
 
